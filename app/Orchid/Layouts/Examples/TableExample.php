@@ -31,12 +31,14 @@ class TableExample extends Table
                 }),
 
             TD::set('name', 'Name')
+                ->sort()
                 ->width(450)
                 ->render(function (Repository $model) {
                     return Str::limit($model->get('name'), 200);
                 }),
 
             TD::set('price', 'Price')
+                ->sort()
                 ->render(function (Repository $model) {
                     return '$ '.number_format($model->get('price'), 2);
                 }),
